@@ -1,0 +1,33 @@
+// Факттар массиві
+const facts = [
+    "Манул алғаш XVIII ғасырда сипатталған.",
+    "Гепард – ең жылдам жабайы мысық.",
+    "Арыстандар – жалмен ерекшеленетін жалғыз мысықтар.",
+    "Жабайы мысықтар түнде керемет көреді.",
+    "Қаратабанды мысық – ең кішкентай жабайы мысық."
+];
+
+// Кездейсоқ факт шығару
+document.getElementById('newFact').addEventListener('click', () => {
+    const fact = facts[Math.floor(Math.random() * facts.length)];
+    document.getElementById('fact').textContent = fact;
+});
+
+// Фон суреттері (cat1 → cat5)
+const backgrounds = [
+    'url("images/cat1.jpg")',
+    'url("images/cat2.jpg")',
+    'url("images/cat3.jpg")',
+    'url("images/cat4.jpg")',
+    'url("images/cat5.jpg")'
+];
+
+// Кездейсоқ фон ауыстыру
+document.getElementById('changeBg').addEventListener('click', () => {
+    const randomBg = backgrounds[Math.floor(Math.random() * backgrounds.length)];
+    const body = document.getElementById('body');
+    body.style.backgroundImage = randomBg;
+    body.style.backgroundSize = 'cover';
+    body.style.backgroundPosition = 'center';
+    body.style.backgroundRepeat = 'no-repeat';
+});
